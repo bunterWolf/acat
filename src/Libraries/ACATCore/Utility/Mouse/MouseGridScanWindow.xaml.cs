@@ -364,8 +364,10 @@ namespace ACAT.Lib.Core.Utility
         /// </summary>
         private void animateHorizontalLine()
         {
-            var point = _rectHoriz.PointToScreen(new Point(0, 0));
+            //var point = _rectHoriz.PointToScreen(new Point(0, 0));
+            var point = new Point(0, Canvas.GetTop(_rectHoriz));    
 
+            //MessageBox.Show(point.Y.ToString());
             _rectHorizStoryboard.Pause(this);
             _rectHoriz.Opacity = 1.0;
             _rectHoriz.Stroke = new SolidColorBrush(GridRectanglePausedBorderColor);
@@ -461,7 +463,9 @@ namespace ACAT.Lib.Core.Utility
             pt = RectVert.PointToScreen(new Point(0, 0));
             animateLineVertical(pt);
 #else
-            var rectPosition = _rectVert.PointToScreen(new Point(0, 0));
+            //var rectPosition = _rectVert.PointToScreen(new Point(0, 0));
+            var rectPosition = new Point(Canvas.GetLeft(_rectVert), Canvas.GetTop(_rectVert));
+
             var from = new Point(rectPosition.X, _lineHorizPausePoint.Y);
             var to = new Point(rectPosition.X + GridRectangleHeight, _lineHorizPausePoint.Y);
             moveImage(_cursorImage, from, to);
@@ -500,11 +504,13 @@ namespace ACAT.Lib.Core.Utility
             if (EnableVerticalGridRectangle)
             {
                 moveVerticalRectangle();
-                _lineHorizPausePoint = _lineHoriz.PointToScreen(new Point(0, 0));
+                //_lineHorizPausePoint = _lineHoriz.PointToScreen(new Point(0, 0));
+                _lineHorizPausePoint = new Point(Canvas.GetLeft(_lineHoriz), Canvas.GetTop(_lineHoriz));
             }
             else
             {
-                Point point = _lineHoriz.PointToScreen(new Point(0, 0));
+                //Point point = _lineHoriz.PointToScreen(new Point(0, 0));
+                Point point = new Point(Canvas.GetLeft(_lineHoriz), Canvas.GetTop(_lineHoriz));
                 moveImageAcrossDisplay(_cursorImage, point.Y);
             }
         }
