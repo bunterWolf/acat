@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Phrases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PhraseList>
+    <Phrase>
+      <Favorite>true</Favorite>
+      <Text>Ja</Text>
+    </Phrase>
+    <Phrase>
+      <Favorite>true</Favorite>
+      <Text>Nein</Text>
+    </Phrase>
+    <Phrase>
+      <Favorite>true</Favorite>
+      <Text>Danke</Text>
+    </Phrase>
+    <Phrase>
+      <Favorite>true</Favorite>
+      <Text>Auf wiedersehen</Text>
+    </Phrase>
+  </PhraseList>
+</Phrases>
